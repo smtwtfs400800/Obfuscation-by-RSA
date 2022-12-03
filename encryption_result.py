@@ -6,9 +6,9 @@ def decrypt(str):
     return str
 
 
-# 주석주석주석주석
+#𛌸򽙉𫂝򽙉𫂝򽙉𫂝򽙉𫂝
 if __name__ == '__main__':
-    user_name = encrypt('soft_sec')
-    user_id = encrypt('12345678')
+    user_name = decrypt('봫󇌳񜑲󟕇喀봫񰶛󧀊')
+    user_id = decrypt('󊷞𾊱򌋌󩝕񟒗񦱆𺎫󢲓')
     print('user_name : ' + user_name)
     print('user_id : ' + user_id)
