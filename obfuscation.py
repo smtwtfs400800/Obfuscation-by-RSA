@@ -1,9 +1,15 @@
 import rsa
+import sys
 from pathlib import Path
 
-FILE = Path(__file__).resolve()
-print(FILE)
-ROOT = FILE.parent
+if len(sys.argv) != 3:
+    print("Insufficient arguments")
+    sys.exit
+
+# 폴더 경로
+PATH = sys.argv[1]
+# 난독화 할 파일 이름
+FILE = sys.argv[2]
 
 if __name__ == '__main__':
     # 키 생성
@@ -13,8 +19,8 @@ if __name__ == '__main__':
     e = rsa.getPublicKey(tot)
     public_key = (e, n)
 
-    origin_file = open(ROOT/'test.py', 'r+', encoding='utf-8')
-    encrypted_file = open(ROOT/'encryption_result.py', 'a+', encoding='utf-8')
+    origin_file = open(PATH+'/'+FILE, 'r+', encoding='utf-8')
+    encrypted_file = open(PATH+'/encryption_result.py', 'a+', encoding='utf-8')
 
     origin_text = origin_file.readlines()
     encrypted_text = []
